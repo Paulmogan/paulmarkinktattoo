@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Paul Mark Ink Tattoo</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #fff;
+      color: #222;
+    }
+
+    header {
+      background: linear-gradient(90deg, gold, #fff);
+      text-align: center;
+      padding: 2rem 1rem;
+      color: black;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      font-weight: bold;
+    }
+
+    header p {
+      font-size: 1.1rem;
+    }
+
+    section {
+      padding: 3rem 1rem;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .services, .gallery, .booking, .contact {
+      margin-top: 3rem;
+    }
+
+    h2 {
+      text-align: center;
+      color: gold;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .services-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .service-item {
+      background: #fffbe6;
+      padding: 1.5rem;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .booking button {
+      display: block;
+      width: 80%;
+      margin: auto;
+      background: gold;
+      color: black;
+      border: none;
+      padding: 1rem;
+      border-radius: 50px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .booking button:hover {
+      background: black;
+      color: gold;
+    }
+
+    footer {
+      background: black;
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+      margin-top: 3rem;
+    }
+
+    footer a {
+      color: gold;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.8rem;
+      }
+      .booking button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Paul Mark Ink Tattoo</h1>
+    <p>Keroka • Contact: 0796518099</p>
+  </header>
+
+  <section class="about">
+    <h2>About Us</h2>
+    <p>Welcome to Paul Mark Ink Tattoo — the home of clean lines, creative art, and precise piercings. We specialize in custom tattoos, professional piercing, and perfume refilling. Our goal is to give you ink that speaks your story.</p>
+  </section>
+
+  <section class="services">
+    <h2>Our Services</h2>
+    <div class="services-list">
+      <div class="service-item">
+        <h3>Custom Tattoos</h3>
+        <p>Personalized designs made with precision and hygiene in mind.</p>
+      </div>
+      <div class="service-item">
+        <h3>Piercing</h3>
+        <p>Professional piercing services using safe and sterile equipment.</p>
+      </div>
+      <div class="service-item">
+        <h3>Perfume Refilling</h3>
+        <p>Top-quality perfumes refilled at affordable rates.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="gallery">
+    <h2>Gallery</h2>
+    <div class="gallery-grid">
+      <img src="https://images.unsplash.com/photo-1603330223745-0629f6eaa1d3" alt="Tattoo Design" />
+      <img src="https://images.unsplash.com/photo-1556228453-efd0a8d8f6a6" alt="Tattoo Studio" />
+      <img src="https://images.unsplash.com/photo-1598970434795-0c54fe7c0642" alt="Piercing" />
+    </div>
+  </section>
+
+  <section class="booking">
+    <h2>Book Your Session</h2>
+    <p style="text-align:center;">Click below to chat with us directly on WhatsApp for bookings or inquiries.</p>
+    <button onclick="window.open('https://wa.me/254796518099?text=Hello%20Paul%20Mark%20Ink%20Tattoo!%20I%20would%20like%20to%20book%20a%20session.', '_blank')">
+      Book via WhatsApp
+    </button>
+  </section>
+
+  <footer>
+    <p>Follow us on:</p>
+    <a href="https://facebook.com/aferimogan" target="_blank">Facebook</a> |
+    <a href="https://instagram.com/paulmarkinktattoo" target="_blank">Instagram</a>
+    <p>© 2025 Paul Mark Ink Tattoo | All Rights Reserved</p>
+  </footer>
+</body>
+</html>
