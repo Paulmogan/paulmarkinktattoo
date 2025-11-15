@@ -1,289 +1,522 @@
-<!DOCTYPE html><html lang="en"><head>  <meta charset="UTF-8" />  <meta name="viewport" content="width=device-width, initial-scale=1.0" />  <title>Paul Mark Ink Tattoo</title>  <style>
-  
-    body {
-  
-      margin: 0;
-  
-      font-family: 'Poppins', sans-serif;
-  
-      background-color: #fff;
-  
-      color: #222;
-  
-    }
-  
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Paul Mark Ink Tattoo — Keroka</title>
+  <meta name="description" content="Paul Mark Ink Tattoo — Keroka. Custom tattoos, piercing, perfume refills. Book via WhatsApp: +254796518099" />
+  <link rel="icon" href="https://img.icons8.com/ios/452/tattoo-machine.png" />
 
-  
-    header {
-  
-      background: linear-gradient(90deg, gold, #fff);
-  
+  <style>
+    :root{
+      --blue: #0666cc;
+      --blue-dark: #0454a3;
+      --gold: #d4af37;
+      --muted: #6b7280;
+      --card: #ffffff;
+      --bg: #f7fbff;
+      --maxw: 1200px;
+      --page-pad: 28px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background:var(--bg);
+      color:#071233;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+    }
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block;border-radius:12px}
+
+    /* layout */
+    .container{max-width:var(--maxw);margin:0 auto;padding:var(--page-pad);}
+    header{background:linear-gradient(90deg,var(--blue),#e7f2ff);position:sticky;top:0;z-index:60;border-bottom:1px solid rgba(4,20,48,0.06)}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:10px;max-width:var(--maxw);margin:0 auto;padding:12px 20px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:56px;height:56px;border-radius:999px;background:linear-gradient(135deg,var(--blue),var(--blue-dark));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:18px;box-shadow:0 6px 18px rgba(4,20,48,0.12)}
+    .brand h1{font-size:18px;margin:0;color:var(--blue-dark)}
+    .nav-links{display:flex;gap:18px;align-items:center}
+    .nav-links a{color:var(--blue-dark);font-weight:600}
+    .cta-whatsapp{background:var(--gold);padding:8px 14px;border-radius:999px;font-weight:700;color:#000;box-shadow:0 6px 14px rgba(0,0,0,0.08)}
+    .mobile-toggle{display:none;border:0;background:transparent}
+
+    /* hero */
+    .hero{
+      min-height:60vh;
+      display:grid;
+      grid-template-columns:1fr;
+      align-items:center;
+      gap:30px;
+      padding:48px 20px;
+      background-image:linear-gradient(rgba(0,12,30,0.45),rgba(0,12,30,0.45)), url("https://images.unsplash.com/photo-1600180758890-6d1b6d2a0331?auto=format&fit=crop&w=1600&q=80");
+      background-size:cover;
+      background-position:center;
+      color:#fff;
+    }
+    .hero-inner{max-width:var(--maxw);margin:0 auto;display:flex;gap:30px;align-items:center;justify-content:space-between;padding:20px}
+    .hero-text{max-width:640px}
+    .eyebrow{display:inline-block;background:rgba(255,255,255,0.08);padding:6px 10px;border-radius:999px;font-weight:700;color:#fff;margin-bottom:14px}
+    .hero h2{font-size:36px;line-height:1.02;margin:0 0 12px;font-weight:800}
+    .hero p.lead{color:rgba(255,255,255,0.92);margin:0 0 18px;font-size:18px}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 18px;border-radius:12px;font-weight:700;border:0;cursor:pointer}
+    .btn-primary{background:var(--gold);color:#000}
+    .btn-outline{background:transparent;border:2px solid rgba(255,255,255,0.18);color:#fff}
+    .hero-card{background:rgba(255,255,255,0.96);color:#071233;border-radius:14px;padding:20px;width:340px;box-shadow:0 20px 50px rgba(2,6,23,0.3)}
+
+    /* sections */
+    section{padding:60px 20px}
+    .section-title{display:flex;flex-direction:column;align-items:center;gap:8px;margin-bottom:28px}
+    .section-title h3{color:var(--blue-dark);font-size:26px;margin:0}
+    .section-title p{color:var(--muted);margin:0;font-size:14px}
+
+    /* about */
+    .about-grid{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;max-width:var(--maxw);margin:0 auto}
+    .about-card{background:var(--card);padding:22px;border-radius:12px;box-shadow:0 8px 30px rgba(2,6,23,0.06)}
+    .about-list{margin-top:12px;color:var(--muted);line-height:1.7}
+
+    /* services */
+    .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:var(--maxw);margin:0 auto}
+    .service{background:#fff;padding:22px;border-radius:12px;box-shadow:0 10px 30px rgba(2,6,23,0.06)}
+    .service h4{margin:0 0 8px;color:var(--blue-dark)}
+    .service .price{color:var(--gold);font-weight:700;margin-top:10px}
+
+    /* why */
+    .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:var(--maxw);margin:0 auto}
+    .why-item{background:linear-gradient(180deg,#fff,#f7fbff);padding:18px;border-radius:12px;text-align:center;box-shadow:0 8px 30px rgba(2,6,23,0.04)}
+    .why-item h5{margin:8px 0 6px;color:var(--blue-dark)}
+
+    /* gallery */
+    .gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:var(--maxw);margin:0 auto}
+    .gallery-grid img{height:220px;object-fit:cover;cursor:pointer;border-radius:10px;transition:transform .25s,box-shadow .25s}
+    .gallery-grid img:hover{transform:scale(1.03);box-shadow:0 12px 30px rgba(2,6,23,0.12)}
+
+    /* tiktok / social */
+    .social-row{display:flex;align-items:center;gap:14px;justify-content:center;flex-wrap:wrap}
+    .tiktok-card{background:#fff;padding:14px;border-radius:12px;display:flex;align-items:center;gap:12px;box-shadow:0 10px 30px rgba(2,6,23,0.06)}
+    .tiktok-card .dot{width:44px;height:44px;border-radius:8px;background:linear-gradient(180deg,#000,#111);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800}
+    .followers{font-weight:800;color:var(--blue-dark)}
+
+    /* booking / contact */
+    .booking-wrap{max-width:920px;margin:0 auto;display:grid;grid-template-columns:1fr 380px;gap:20px;align-items:start}
+    .booking-form{background:#fff;padding:18px;border-radius:12px;box-shadow:0 10px 30px rgba(2,6,23,0.06)}
+    .field{display:block;margin-bottom:10px}
+    input[type="text"], input[type="tel"], textarea, select{
+      width:100%;padding:12px;border-radius:8px;border:1px solid #e6eefc;font-size:15px;background:#fbfdff;
+    }
+    textarea{min-height:120px;resize:vertical}
+    .quick-card{background:linear-gradient(180deg,#fff,#f4fbff);padding:18px;border-radius:12px;box-shadow:0 10px 30px rgba(2,6,23,0.04)}
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:var(--maxw);margin:0 auto}
+
+    footer{padding:28px;text-align:center;color:var(--muted);background:transparent}
+
+    /* popup modal for gallery */
+    .popup {
+      display: none;
+      position: fixed;
+      z-index: 1100;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0,0,0,0.85);
       text-align: center;
-  
-      padding: 2rem 1rem;
-  
-      color: black;
-  
+      padding-top: 60px;
     }
-  
-
-  
-    header h1 {
-  
-      margin: 0;
-  
-      font-size: 2.5rem;
-  
-      font-weight: bold;
-  
-    }
-  
-
-  
-    header p {
-  
-      font-size: 1.1rem;
-  
-    }
-  
-
-  
-    section {
-  
-      padding: 3rem 1rem;
-  
-      max-width: 900px;
-  
+    .popup-content {
       margin: auto;
-  
-    }
-  
-
-  
-    .services, .gallery, .booking, .contact {
-  
-      margin-top: 3rem;
-  
-    }
-  
-
-  
-    h2 {
-  
-      text-align: center;
-  
-      color: gold;
-  
-      font-size: 2rem;
-  
-      margin-bottom: 1rem;
-  
-    }
-  
-
-  
-    .services-list {
-  
-      display: grid;
-  
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  
-      gap: 1.5rem;
-  
-    }
-  
-
-  
-    .service-item {
-  
-      background: #fffbe6;
-  
-      padding: 1.5rem;
-  
+      max-width: 92%;
+      max-height: 84%;
       border-radius: 10px;
-  
-      text-align: center;
-  
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  
+      box-shadow: 0 20px 60px rgba(0,0,0,0.6);
     }
-  
-
-  
-    .gallery img {
-  
-      width: 100%;
-  
-      border-radius: 10px;
-  
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  
-    }
-  
-
-  
-    .gallery-grid {
-  
-      display: grid;
-  
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  
-      gap: 1rem;
-  
-      margin-top: 1rem;
-  
-    }
-  
-
-  
-    .booking button {
-  
-      display: block;
-  
-      width: 80%;
-  
-      margin: auto;
-  
-      background: gold;
-  
-      color: black;
-  
-      border: none;
-  
-      padding: 1rem;
-  
-      border-radius: 50px;
-  
-      font-size: 1.2rem;
-  
+    .popup .close {
+      position: absolute;
+      top: 18px; right: 28px;
+      color: var(--gold);
+      font-size: 36px;
       cursor: pointer;
-  
-      transition: 0.3s;
-  
+      font-weight:700;
     }
-  
+    .popup .close:hover { color: #fff; }
 
-  
-    .booking button:hover {
-  
-      background: black;
-  
-      color: gold;
-  
+    /* floating whatsapp */
+    .whatsapp-float{position:fixed;right:18px;bottom:18px;background:#25D366;color:#04203b;padding:14px;border-radius:999px;box-shadow:0 12px 30px rgba(2,6,23,0.2);z-index:120}
+    .whatsapp-float a{color:inherit;font-weight:800;text-decoration:none}
+
+    /* responsive */
+    @media (max-width:980px){
+      .about-grid{grid-template-columns:1fr}
+      .hero-inner{flex-direction:column;align-items:flex-start}
+      .hero-card{width:100%}
+      .services-grid{grid-template-columns:1fr}
+      .why-grid{grid-template-columns:1fr}
+      .gallery-grid{grid-template-columns:1fr 1fr}
+      .booking-wrap{grid-template-columns:1fr}
+      .contact-grid{grid-template-columns:1fr}
+      .nav-links{display:none}
+      .mobile-toggle{display:inline-block}
     }
-  
-
-  
-    footer {
-  
-      background: black;
-  
-      color: white;
-  
-      text-align: center;
-  
-      padding: 2rem 1rem;
-  
-      margin-top: 3rem;
-  
+    @media (max-width:600px){
+      .gallery-grid img{height:160px}
+      .hero h2{font-size:28px}
+      .gallery-grid{grid-template-columns:1fr 1fr}
     }
-  
+  </style>
+</head>
+<body>
 
-  
-    footer a {
-  
-      color: gold;
-  
-      text-decoration: none;
-  
-      margin: 0 10px;
-  
-    }
-  
+  <!-- HEADER -->
+  <header>
+    <div class="nav">
+      <div class="brand">
+        <div class="logo">PM</div>
+        <div>
+          <h1>Paul Mark Ink Tattoo</h1>
+          <div style="font-size:12px;color:rgba(4,20,48,0.45)">Keroka • +254 796 518 099</div>
+        </div>
+      </div>
 
-  
-    @media (max-width: 600px) {
-  
-      header h1 {
-  
-        font-size: 1.8rem;
-  
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#booking">Booking</a>
+        <a href="#contact">Contact</a>
+        <a class="cta-whatsapp" href="https://api.whatsapp.com/send?phone=254796518099&text=Hi%20Paul%20Mark%20Ink%20Tattoo%2C%20I%20want%20to%20book%20a%20session." target="_blank" rel="noopener">Message</a>
+      </nav>
+
+      <button class="mobile-toggle" aria-label="menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="home" aria-labelledby="home-title">
+    <div class="hero-inner container">
+      <div class="hero-text">
+        <div class="eyebrow">Paul Mark Ink</div>
+        <h2 id="home-title">A Good Ink Deserves a Good Artist</h2>
+        <p class="lead">Luxury tattoo & piercing studio in Keroka. Custom designs, professional piercing, and trusted aftercare — book quickly via WhatsApp.</p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#booking" title="Book now">Book a session</a>
+          <a class="btn btn-outline" href="#gallery" title="View gallery">View gallery</a>
+        </div>
+      </div>
+
+      <div class="hero-card" aria-hidden="false">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <div>
+            <div style="font-size:13px;color:var(--muted)">Quick Price Guide</div>
+            <div style="font-weight:800;font-size:18px;margin-top:6px">Tattoos Ksh 800 — 10,000</div>
+            <div style="color:var(--muted);font-size:13px;margin-top:6px">Perfume refills Ksh 50 — 500 • Ear piercing from Ksh 100</div>
+          </div>
+          <div style="text-align:right">
+            <div style="font-size:12px;color:var(--muted)">Follow</div>
+            <div style="font-weight:800;color:var(--blue-dark);">@paulmarkinktattoo</div>
+          </div>
+        </div>
+
+        <div style="height:12px"></div>
+        <div style="border-top:1px solid rgba(2,6,23,0.06);margin-top:12px;padding-top:12px">
+          <div style="font-size:13px;color:var(--muted)">Location</div>
+          <div style="font-weight:700">Keroka • Post Bank Building, 3rd Floor</div>
+          <div style="font-size:13px;color:var(--muted);margin-top:8px">Open: Mon–Sat 09:00 — 18:00</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" aria-labelledby="about-title">
+    <div class="container">
+      <div class="section-title">
+        <h3 id="about-title">About Paul Mark Ink Tattoo</h3>
+        <p>Creative tattooing, professional piercing, and trusted aftercare — serving Keroka and region.</p>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-card">
+          <p><strong>Paul Mogan</strong> is a professional tattoo artist based in Keroka. Paul Mark Ink Tattoo focuses on safe technique, unique custom designs, and long-term aftercare. We treat every client with respect and deliver work that lasts.</p>
+
+          <ul class="about-list">
+            <li>• Clean, sterile environment and disposable needles where required</li>
+            <li>• Custom consultation and design process</li>
+            <li>• Aftercare products (perfume refills & kits)</li>
+            <li>• Reasonable pricing and clear booking via WhatsApp</li>
+          </ul>
+        </div>
+
+        <div>
+          <img src="https://images.unsplash.com/photo-1600180758841-13a69bb80228?auto=format&fit=crop&w=1000&q=80" alt="Tattoo artist working" style="border-radius:12px;box-shadow:0 10px 30px rgba(2,6,23,0.08)">
+          <div style="margin-top:10px;color:var(--muted);font-size:13px">Keroka • Post Bank Building, 3rd Floor</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" aria-labelledby="services-title" style="background:linear-gradient(180deg,#f7fbff, #fff);">
+    <div class="container">
+      <div class="section-title">
+        <h3 id="services-title">Services & Prices</h3>
+        <p>Clear pricing and professional service. Final price depends on design complexity & placement.</p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service">
+          <h4>Custom Tattooing</h4>
+          <p>Consultation and custom design. Fine-line, blackwork, colour, portraits and more.</p>
+          <div class="price">From Ksh 800 — 10,000</div>
+        </div>
+
+        <div class="service">
+          <h4>Perfume Refilling</h4>
+          <p>Original aftercare perfume bottles, lotions and refill treatments to keep colour fresh.</p>
+          <div class="price">From Ksh 50 — 500</div>
+        </div>
+
+        <div class="service">
+          <h4>Ear Piercing</h4>
+          <p>Quick, professional ear piercing with sterile technique and quality studs.</p>
+          <div class="price">From Ksh 100</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section id="why" aria-labelledby="why-title">
+    <div class="container">
+      <div class="section-title">
+        <h3 id="why-title">Why Choose Paul Mark Ink Tattoo</h3>
+        <p>We combine skill, safety, and great value — here’s why clients trust us.</p>
+      </div>
+
+      <div class="why-grid">
+        <div class="why-item">
+          <div style="font-size:28px;color:var(--blue-dark);font-weight:800">Hygiene</div>
+          <h5>Clean & Safe</h5>
+          <p style="color:var(--muted)">Strict sterilisation, disposable needles and studio protocols.</p>
+        </div>
+
+        <div class="why-item">
+          <div style="font-size:28px;color:var(--blue-dark);font-weight:800">Skill</div>
+          <h5>Experienced Artist</h5>
+          <p style="color:var(--muted)">Years of tattooing practice with a focus on lines, shading and colour.</p>
+        </div>
+
+        <div class="why-item">
+          <div style="font-size:28px;color:var(--blue-dark);font-weight:800">Value</div>
+          <h5>Transparent Pricing</h5>
+          <p style="color:var(--muted)">Clear price ranges and honest quotes — no surprises.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery" aria-labelledby="gallery-title">
+    <div class="container">
+      <div class="section-title">
+        <h3 id="gallery-title">Gallery</h3>
+        <p>Real work from the studio — tap any photo to zoom.</p>
+      </div>
+
+      <div class="gallery-grid" aria-live="polite">
+        <img src="https://images.unsplash.com/photo-1549887534-3db1bd59dcca?auto=format&fit=crop&w=600&q=60" alt="Arm tattoo close up">
+        <img src="https://images.unsplash.com/photo-1532344550708-4c2e3d99f2fd?auto=format&fit=crop&w=600&q=60" alt="Tattoo artist working">
+        <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=600&q=60" alt="Woman with tattoo sleeve">
+        <img src="https://images.unsplash.com/photo-1571299283883-d50ec8212a26?auto=format&fit=crop&w=600&q=60" alt="Chest tattoo artwork">
+        <img src="https://images.unsplash.com/photo-1606131731446-5569d11b4c3a?auto=format&fit=crop&w=600&q=60" alt="Back tattoo design">
+        <img src="https://images.unsplash.com/photo-1552604617-eea98aa27234?auto=format&fit=crop&w=600&q=60" alt="Tattoo stencil process">
+        <img src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?auto=format&fit=crop&w=600&q=60" alt="Tattoo on forearm">
+        <img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=600&q=60" alt="Tattoo artist tools">
+        <img src="https://images.unsplash.com/photo-1530023367847-a683933f4173?auto=format&fit=crop&w=600&q=60" alt="Full sleeve tattoo">
+      </div>
+    </div>
+
+    <!-- Popup Modal -->
+    <div id="popup" class="popup" role="dialog" aria-modal="true" aria-hidden="true">
+      <button class="close" aria-label="Close popup">&times;</button>
+      <img class="popup-content" id="popup-img" alt="">
+    </div>
+  </section>
+
+  <!-- SOCIAL / TIKTOK -->
+  <section id="social" aria-labelledby="social-title" style="background:linear-gradient(180deg,#fff,#f2f8ff);">
+    <div class="container">
+      <div class="section-title">
+        <h3 id="social-title">Follow Us</h3>
+        <p>See short videos, studio work and behind-the-scenes on TikTok</p>
+      </div>
+
+      <div class="social-row">
+        <div class="tiktok-card">
+          <div class="dot">♬</div>
+          <div>
+            <div style="font-weight:800">@paulmarkink_tattoo</div>
+            <div style="color:var(--muted);font-size:13px">TikTok (follow for videos & booking updates)</div>
+          </div>
+          <div style="margin-left:14px;font-weight:800;color:var(--blue-dark)" class="followers">1.6K</div>
+          <div style="margin-left:8px">
+            <a href="https://www.tiktok.com/@paulmarkink_tattoo" target="_blank" rel="noopener" style="display:inline-block;padding:8px 12px;border-radius:8px;background:var(--blue);color:#fff;font-weight:700">Visit TikTok</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKING -->
+  <section id="booking" aria-labelledby="booking-title">
+    <div class="container">
+      <div class="section-title">
+        <h3 id="booking-title">Book a Session</h3>
+        <p>Fill your details and we’ll open WhatsApp with your booking message ready to send.</p>
+      </div>
+
+      <div class="booking-wrap">
+        <form id="bookingForm" class="booking-form" aria-label="Booking form">
+          <div class="field">
+            <label style="font-weight:700;font-size:13px">Full name</label>
+            <input id="name" name="name" type="text" placeholder="Your name" required />
+          </div>
+
+          <div class="field">
+            <label style="font-weight:700;font-size:13px">Phone</label>
+            <input id="phone" name="phone" type="tel" placeholder="0796 518 099" required />
+          </div>
+
+          <div class="field">
+            <label style="font-weight:700;font-size:13px">Service</label>
+            <select id="service" name="service">
+              <option>Custom Tattooing</option>
+              <option>Perfume Refill</option>
+              <option>Ink Refill / Touch-up</option>
+              <option>Ear Piercing</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label style="font-weight:700;font-size:13px">Notes (design, date/time)</label>
+            <textarea id="note" name="note" placeholder="Describe your idea, preferred date/time or attach a photo via WhatsApp"></textarea>
+          </div>
+
+          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px">
+            <button type="submit" class="btn btn-primary">Open WhatsApp to Send</button>
+            <a href="https://api.whatsapp.com/send?phone=254796518099" target="_blank" rel="noopener" class="btn" style="background:#e6f9ef;color:#052023;border:1px solid #b7edd0">Open WhatsApp</a>
+          </div>
+
+          <p style="font-size:13px;color:var(--muted);margin-top:10px">We will reply to confirm date, time & any deposit details.</p>
+        </form>
+
+        <aside class="quick-card">
+          <h4 style="margin:0 0 8px">Quick Book</h4>
+          <p style="color:var(--muted)">Prefer to message directly? Tap the button below.</p>
+          <a href="https://api.whatsapp.com/send?phone=254796518099&text=Hi%20Paul%2C%20I'd%20like%20to%20book%20a%20session." target="_blank" rel="noopener" class="btn" style="background:var(--blue);color:#fff">Message on WhatsApp</a>
+
+          <div style="margin-top:14px">
+            <div style="font-size:13px;color:var(--muted)">Studio Hours</div>
+            <div style="font-weight:700;margin-top:6px">Mon–Sat: 09:00 — 18:00</div>
+            <div style="font-size:13px;color:var(--muted);margin-top:8px">Address: Keroka, Post Bank Building, 3rd Floor</div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" aria-labelledby="contact-title" style="background:linear-gradient(180deg,#fff,#f8fbff);">
+    <div class="container">
+      <div class="section-title">
+        <h3 id="contact-title">Contact</h3>
+        <p>Call or message on WhatsApp to book — we reply quickly.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="about-card">
+          <h4 style="margin:0 0 8px">Get in touch</h4>
+          <p style="color:var(--muted)">📍 Keroka • Post Bank Building, 3rd Floor</p>
+          <p style="color:var(--muted)">📞 <a href="tel:+254796518099">0796 518 099</a></p>
+          <p style="color:var(--muted)">📧 <a href="mailto:paulmogire45@gmail.com">paulmogire45@gmail.com</a></p>
+          <div style="margin-top:12px;display:flex;gap:10px">
+            <a href="https://www.facebook.com/aferimogan" target="_blank" rel="noopener" style="background:#1877f2;color:#fff;padding:8px 10px;border-radius:8px">Facebook</a>
+            <a href="https://www.instagram.com/paulmarkinktattoo" target="_blank" rel="noopener" style="background:#E1306C;color:#fff;padding:8px 10px;border-radius:8px">Instagram</a>
+            <a href="https://www.tiktok.com/@paulmarkinktattoo" target="_blank" rel="noopener" style="background:#010101;color:#fff;padding:8px 10px;border-radius:8px">TikTok</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p>Follow us on: <a href="https://www.facebook.com/aferimogan" target="_blank" rel="noopener">Facebook</a> • <a href="https://www.instagram.com/paulmarkinktattoo" target="_blank" rel="noopener">Instagram</a> • <a href="https://www.tiktok.com/@paulmarkinktattoo" target="_blank" rel="noopener">TikTok</a></p>
+      <p>© 2025 Paul Mark Ink Tattoo | All Rights Reserved</p>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp -->
+  <div class="whatsapp-float" aria-hidden="false">
+    <a href="https://api.whatsapp.com/send?phone=254796518099&text=Hi%20Paul%20Mark%20Ink%2C%20I%20want%20to%20book%20a%20session." target="_blank" rel="noopener">Message • 0796 518 099</a>
+  </div>
+
+  <!-- Popup modal -->
+  <div id="popup" class="popup" aria-hidden="true" style="display:none">
+    <button class="close" aria-label="Close popup">&times;</button>
+    <img class="popup-content" id="popup-img" alt="">
+  </div>
+
+  <script>
+    // Gallery popup
+    (function(){
+      const galleryImgs = document.querySelectorAll(".gallery-grid img");
+      const popup = document.getElementById("popup");
+      const popupImg = document.getElementById("popup-img");
+      const closeBtn = popup.querySelector(".close");
+
+      function openPopup(src, alt){
+        popupImg.src = src.replace("w=600","w=1200");
+        popupImg.alt = alt || '';
+        popup.style.display = "block";
+        popup.setAttribute("aria-hidden","false");
+        document.body.style.overflow = "hidden";
       }
-  
-      .booking button {
-  
-        width: 100%;
-  
+      function closePopup(){
+        popup.style.display = "none";
+        popup.setAttribute("aria-hidden","true");
+        popupImg.src = "";
+        document.body.style.overflow = "";
       }
-  
-    }
-  
-  </style></head><body>  <header><h1>Paul Mark Ink Tattoo</h1>
 
-<p>Keroka • Contact: 0796518099</p>
+      galleryImgs.forEach(img=>{
+        img.addEventListener("click", ()=> openPopup(img.src, img.alt));
+        img.addEventListener("keydown", (e)=> { if(e.key === 'Enter' || e.key === ' ') openPopup(img.src, img.alt); });
+        img.setAttribute("tabindex","0");
+      });
 
-  </header>  <section class="about"><h2>About Us</h2>
+      closeBtn.addEventListener("click", closePopup);
+      popup.addEventListener("click", (e)=> {
+        if(e.target === popup) closePopup();
+      });
+      document.addEventListener("keydown", (e)=> { if(e.key === "Escape") closePopup(); });
 
-<p>Welcome to Paul Mark Ink Tattoo — the home of clean lines, creative art, and precise piercings. We specialize in custom tattoos, professional piercing, and perfume refilling. Our goal is to give you ink that speaks your story.</p>
-
-  </section>  <section class="services"><h2>Our Services</h2>
-
-<div class="services-list">
-
-  <div class="service-item">
-
-    <h3>Custom Tattoos</h3>
-
-    <p>Personalized designs made with precision and hygiene in mind.</p>
-
-  </div>
-
-  <div class="service-item">
-
-    <h3>Piercing</h3>
-
-    <p>Professional piercing services using safe and sterile equipment.</p>
-
-  </div>
-
-  <div class="service-item">
-
-    <h3>Perfume Refilling</h3>
-
-    <p>Top-quality perfumes refilled at affordable rates.</p>
-
-  </div>
-
-</div>
-
-  </section>  <section class="gallery"><h2>Gallery</h2>
-
-<div class="gallery-grid">
-
-  <img src="https://images.unsplash.com/photo-1603330223745-0629f6eaa1d3" alt="Tattoo Design" />
-
-  <img src="https://images.unsplash.com/photo-1556228453-efd0a8d8f6a6" alt="Tattoo Studio" />
-
-  <img src="https://images.unsplash.com/photo-1598970434795-0c54fe7c0642" alt="Piercing" />
-
-</div>
-
-  </section>  <section class="booking"><h2>Book Your Session</h2>
-
-<p style="text-align:center;">Click below to chat with us directly on WhatsApp for bookings or inquiries.</p>
-
-<button onclick="window.open('https://wa.me/254796518099?text=Hello%20Paul%20Mark%20Ink%20Tattoo!%20I%20would%20like%20to%20book%20a%20session.', '_blank')">
-
-  Book via WhatsApp
-
-</button>
-
-  </section>  <footer><p>Follow us on:</p>
-
-<a href="https://facebook.com/aferimogan" target="_blank">Facebook</a> |
-
-<a href="https://instagram.com/paulmarkinktattoo" target="_blank">Instagram</a>
-
-<p>© 2025 Paul Mark Ink Tattoo | All Rights Reserved</p>
-
-  </footer></body></html>
+      // Booking form -> open whatsapp with prefilled message
+      const bookingForm = document.getElementById("bookingForm");
+      bookingForm && bookingForm.addEventListener("submit", function(e){
+        e.preventDefault();
+        const name = encodeURIComponent(document.getElementById("name").value || '');
+        const phone = encodeURIComponent(document.getElementById("phone").value || '');
+        const service = encodeURIComponent(document.getElementById("service").value || '');
+        const note = encodeURIComponent(document.getElementById("note").value || '');
+        const message = `Hi Paul Mark Ink Tattoo, I'd like to book a session.%0AName: ${name}%0APhone: ${phone}%0AService: ${service}%0ANotes: ${note}`;
+        const url = `https://api.whatsapp.com/send?phone=254796518099&text=${message}`;
+        window.open(url, "_blank");
+      });
+    })();
+  </script>
+</body>
+        </html>
